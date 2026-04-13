@@ -24,30 +24,71 @@ const values = [
 
 const Index = () => (
   <div className="min-h-screen">
-    {/* Hero */}
+    {/* Hero + Featured Solutions */}
     <section className="hero-gradient relative min-h-[90vh] flex items-center overflow-hidden">
       <NetworkDecoration className="top-0 right-0" />
       <NetworkDecoration className="bottom-0 left-0 rotate-180" />
       <div className="container relative z-10 py-20">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-            Transforming Data into Decisions.{" "}
-            <span className="text-gradient">Powering Intelligent Enterprises.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-            Data, AI, and Industry Solutions to drive growth, compliance, and efficiency.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link to="/solutions">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 gap-2">
-                Explore Solutions <ArrowRight size={18} />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary">
-                Book a Consultation
-              </Button>
-            </Link>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Introduction */}
+          <div>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
+              Transforming Data into Decisions.{" "}
+              <span className="text-gradient">Powering Intelligent Enterprises.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+              Data, AI, and Industry Solutions to drive growth, compliance, and efficiency.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/solutions">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 gap-2">
+                  Explore Solutions <ArrowRight size={18} />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-border hover:bg-secondary">
+                  Book a Consultation
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right - Featured Solutions */}
+          <div className="flex flex-col gap-5">
+            <h2 className="text-2xl font-bold">Featured Solutions</h2>
+            <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <AlertTriangle className="text-primary" size={24} />
+                  <h3 className="text-lg font-bold">Financial Crime Platform</h3>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-primary text-primary-foreground font-semibold">NEW</span>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  AI-powered alert management to reduce false positives by 30–50% and accelerate compliance workflows.
+                </p>
+                <Link to="/solutions/financial-crime">
+                  <Button variant="outline" size="sm" className="gap-2 border-primary/50 text-primary hover:bg-primary/10">
+                    See Platform in Action <ArrowRight size={14} />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border hover:border-accent/50 transition-all duration-300 card-glow overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Users className="text-accent" size={24} />
+                  <h3 className="text-lg font-bold">Guest360 CDP</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  Unified guest profiles with AI-driven segmentation for personalized hospitality experiences.
+                </p>
+                <Link to="/solutions/guest360">
+                  <Button variant="outline" size="sm" className="gap-2 border-accent/50 text-accent hover:bg-accent/10">
+                    Learn More <ArrowRight size={14} />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
@@ -74,48 +115,6 @@ const Index = () => (
       </div>
     </SectionWrapper>
 
-    {/* Featured Solutions */}
-    <SectionWrapper className="py-24 bg-secondary/30">
-      <div className="container">
-        <h2 className="text-3xl font-bold text-center mb-12">Featured Solutions</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow overflow-hidden">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-4">
-                <AlertTriangle className="text-primary" size={28} />
-                <h3 className="text-xl font-bold">Financial Crime Platform</h3>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-primary text-primary-foreground font-semibold">NEW</span>
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                AI-powered alert management to reduce false positives by 30–50% and accelerate compliance workflows.
-              </p>
-              <Link to="/solutions">
-                <Button variant="outline" className="gap-2 border-primary/50 text-primary hover:bg-primary/10">
-                  See Platform in Action <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-          <Card className="bg-card border-border hover:border-accent/50 transition-all duration-300 card-glow overflow-hidden">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-3 mb-4">
-                <Users className="text-accent" size={28} />
-                <h3 className="text-xl font-bold">Guest360 CDP</h3>
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Unified guest profiles with AI-driven segmentation for personalized hospitality experiences.
-              </p>
-              <Link to="/solutions">
-                <Button variant="outline" className="gap-2 border-accent/50 text-accent hover:bg-accent/10">
-                  Learn More <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </SectionWrapper>
-
     {/* Value Proposition */}
     <SectionWrapper className="py-24">
       <div className="container">
@@ -132,7 +131,6 @@ const Index = () => (
         </div>
       </div>
     </SectionWrapper>
-
 
     {/* Why Act Now */}
     <SectionWrapper className="py-24">
