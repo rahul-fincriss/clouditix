@@ -133,17 +133,6 @@ const Index = () => (
       </div>
     </SectionWrapper>
 
-    {/* Trust Bar */}
-    <SectionWrapper className="py-16 border-t border-b border-border">
-      <div className="container text-center">
-        <p className="text-xs text-muted-foreground uppercase tracking-widest mb-8">Trusted by Leading Enterprises</p>
-        <div className="flex justify-center items-center gap-12 flex-wrap opacity-30">
-          {["Enterprise A", "Enterprise B", "Enterprise C", "Enterprise D", "Enterprise E"].map((name) => (
-            <div key={name} className="text-lg font-bold tracking-wider">{name}</div>
-          ))}
-        </div>
-      </div>
-    </SectionWrapper>
 
     {/* Why Act Now */}
     <SectionWrapper className="py-24">
